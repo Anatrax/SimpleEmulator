@@ -1,0 +1,10 @@
+*qmake*
+*Makefile*
+*.pro
+*.pro*
+*object_script*
+*debug*
+*release*
+
+catch.hpp
+*sample*
