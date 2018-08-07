@@ -6,8 +6,13 @@
 #define CPU_H
 
 #include "Clock.h"
+#include "ProgramCounter.h"
+#include "Register.h"
+#include "ALU.h"
+#include "RAM.h"    // temporary until externalized
 
 typedef unsigned char byte;
+typedef int control_word;
 
 /**
  * @brief The CPU class represents the emulated CPU
@@ -24,8 +29,9 @@ private:
     Clock clock;
     //byte address_bus;
     byte data_bus;
-    byte A; // A register
-    byte B; // B register
+    Register A; // A register
+    Register B; // B register
+    control_word ctrl_signal;
 //    unsigned short opcode;
 //    byte memory[4096]; // 4k memory = 4096
 //    byte V[16];    // general purpose registers

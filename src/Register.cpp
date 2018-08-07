@@ -1,14 +1,14 @@
 #include "Register.h"
 
-Register::Register(Bus* bus)
+Register::Register(byte *bus)
 {
-    in_byte = &(bus->data);
+    data_bus = bus;
     data = 0xff;
 }
 
 void Register::set()
 {
-    data = *in_byte;
+    data = *data_bus;
 }
 
 void Register::clear()

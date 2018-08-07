@@ -1,13 +1,9 @@
-#include <iostream>
-
-using namespace std;
-
 #include "SR_Latch.h"
 
-SR_Latch::SR_Latch(ElectricalWire* set_wire, ElectricalWire* reset_wire)
+SR_Latch::SR_Latch(bool* set_wire, bool* reset_wire)
 {
-    set = &(set_wire->has_voltage);
-    reset = &(reset_wire->has_voltage);
+    set = set_wire;
+    reset = reset_wire;
     Q = *set;
     Q_inverse = !Q;
 }

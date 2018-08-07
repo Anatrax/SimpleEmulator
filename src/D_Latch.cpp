@@ -1,8 +1,8 @@
 #include "D_Latch.h"
 
-D_Latch::D_Latch(ElectricalWire* data_wire)
+D_Latch::D_Latch(bool* data_wire)
 {
-    data = &(data_wire->has_voltage);
+    data = data_wire;
 
     Q = true;   // Q defaults to true
     Q_inverse = !Q;

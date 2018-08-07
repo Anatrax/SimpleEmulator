@@ -1,12 +1,11 @@
 #ifndef D_LATCH_H
 #define D_LATCH_H
 
-#include "ElectricalWire.h"
 typedef unsigned char byte;
 
 class D_Latch {
 public:
-    D_Latch(ElectricalWire* data_wire);
+    D_Latch(bool* data_wire);
 
     void set();
 

@@ -5,8 +5,9 @@
 #include "CPU.h"
 
 CPU::CPU()
+    : A(&data_bus), B(&data_bus)
 {
-
+    //
 }
 
 int CPU::init()

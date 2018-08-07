@@ -5,8 +5,8 @@
 //{
 //    bool invert = true;
 
-//    ElectricalWire set_wire(true);
-//    ElectricalWire reset_wire(false);
+//    bool set_wire = true;
+//    bool reset_wire = false;
 
 //    SR_Latch latch(&set_wire, &reset_wire);
 
@@ -18,8 +18,8 @@
 //{
 //    bool invert = true;
 
-//    ElectricalWire set_wire(false);
-//    ElectricalWire reset_wire(true);
+//    bool set_wire = false;
+//    bool reset_wire = true;
 
 //    SR_Latch latch(&set_wire, &reset_wire);
 
@@ -31,8 +31,8 @@
 //{
 //    bool invert = true;
 
-//    ElectricalWire set_wire(true);
-//    ElectricalWire reset_wire(true);
+//    bool set_wire = true;
+//    bool reset_wire = true;
 
 //    SR_Latch latch(&set_wire, &reset_wire);
 

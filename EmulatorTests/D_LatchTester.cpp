@@ -3,18 +3,16 @@
 
 //TEST_CASE( "D_Latch/test" )
 //{
-//    ElectricalWire data(false);
-//    D_Latch latch(&data);
+//    bool input = false;
+//    D_Latch latch(&input);
 
-//    data.has_voltage = false;
+//    input = false;
 //    REQUIRE( latch.enable() == true );
-
 //    latch.set();
 //    REQUIRE( latch.enable() == false );
 
-//    data.has_voltage = true;
+//    input = true;
 //    REQUIRE( latch.enable() == false );
-
 //    latch.set();
 //    REQUIRE( latch.enable() == true );
 //}

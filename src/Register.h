@@ -1,13 +1,11 @@
 #ifndef REGISTER_H
 #define REGISTER_H
 
-#include "Bus.h"
-
 typedef unsigned char byte;
 
 class Register {
 public:
-    Register(Bus *bus);
+    Register(byte* bus);
 
     void set();
 
@@ -16,7 +14,7 @@ public:
     byte enable();
 
 private:
-    byte* in_byte;
+    byte* data_bus;
     byte data;
 };
 

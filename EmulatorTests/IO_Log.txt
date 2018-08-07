@@ -1,0 +1,2 @@
+Welcome! type your info:
+                        quit
