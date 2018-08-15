@@ -16,7 +16,7 @@ public:
 private:
     Register* A;
     byte* B;
-    //char flags;   // overflow, <, >, ==
+    //char flags;   // carry, 0, interrupt disable, decimal mode, break, overflow, negative, <, >, ==
     byte* data_bus;
 };
 

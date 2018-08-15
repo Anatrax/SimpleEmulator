@@ -3,6 +3,7 @@
 
 ControlUnit::ControlUnit(byte* instruction_register) : microcounter(instruction_register)
 {
+    if(MANUAL_STEP) std::cout << "Manual Conrol-Unit-Step Enabled, use ENTER key to pulse the clock." << std::endl;
     clock.start();
 }
 
@@ -10,11 +11,14 @@ control_word ControlUnit::decode_micro_instruct(const byte instruction)
 {
     control_word ctrl_wrd = 0x0;
     //on clock pulse
-    if(clock.tick(MANUAL_STEP)){
+    if(clock.tick(MANUAL_STEP))
+    {
         if(microcounter.out() == 0x1) ctrl_wrd |= PC_ENABLE | MEM_REG_SET;
         else if(microcounter.out() == 0x2) ctrl_wrd |= RAM_ENABLE | INSTRUCT_SET | PC_INC;
-        else {
-            switch (instruction) {
+        else
+        {
+            switch (instruction)
+            {
                 case LDA:
                     if(microcounter.out() == 0x3) ctrl_wrd |= INSTRUCT_ENABLE | MEM_REG_SET;
                     else if(microcounter.out() == 0x4)
@@ -34,7 +38,11 @@ control_word ControlUnit::decode_micro_instruct(const byte instruction)
                 break;
                 case OUT:
                     microcounter.clear();
-                    ctrl_wrd |= A_ENABLE | MEM_REG_SET;
+                    ctrl_wrd |= A_ENABLE | IO_SET;
+                break;
+                case HALT:
+                    microcounter.clear();
+                    ctrl_wrd |= HALT_CLOCK;
             }
         }
 

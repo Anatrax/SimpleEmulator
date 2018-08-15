@@ -1,6 +1,8 @@
 ﻿#ifndef CLOCK_H
 #define CLOCK_H
 
+const bool MANUAL_STEP = false;
+
 class Clock {
 public:
 	Clock();
