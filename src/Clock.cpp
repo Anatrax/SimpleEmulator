@@ -7,11 +7,11 @@ Clock::Clock()
     halted = true;
 }
 
-int Clock::tick(bool manualStep)
+int Clock::tick(bool manual_step)
 {
 	if(!halted)
 	{
-		if(manualStep)
+        if(manual_step)
 		{
 			char blank;
             std::cin.get(blank);

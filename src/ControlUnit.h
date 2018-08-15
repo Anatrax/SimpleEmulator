@@ -30,6 +30,8 @@ enum MICROINSTRUCTIONS {
     PC_ENABLE = 0x4000,         //100000000000000
 };
 
+const bool MANUAL_STEP = true;  // if true, clock advance manually with ENTER key
+
 class ControlUnit {
 public:
     ControlUnit(byte* instruction_register);

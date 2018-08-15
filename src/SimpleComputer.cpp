@@ -136,7 +136,7 @@ int SimpleComputer::run()
         if(ctrl_bus & IO_SET)
         {
             std::cout << "--Display OUT\t\t";
-            //display.set();
+            display.set();
             printBinary(this->display.get());
         }
         if(ctrl_bus & PC_SET)

@@ -12,5 +12,5 @@ byte IO::get() {
 
 void IO::set() {
     data = *data_bus;
-    if(data != 0) std::cout << static_cast<int>(data) << std::endl;
+    //if(data != 0) std::cout << static_cast<int>(data) << std::endl;
 }
