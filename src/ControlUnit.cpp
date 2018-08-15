@@ -1,7 +1,10 @@
 #include <iostream>
 #include "ControlUnit.h"
 
-ControlUnit::ControlUnit(byte* instruction_register) : microcounter(instruction_register) {}
+ControlUnit::ControlUnit(byte* instruction_register) : microcounter(instruction_register)
+{
+    clock.start();
+}
 
 control_word ControlUnit::decode_micro_instruct(const byte instruction)
 {

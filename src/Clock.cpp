@@ -4,7 +4,7 @@
 Clock::Clock()
 {
 	tick_tock = 0;
-	halted = false;
+    halted = true;
 }
 
 int Clock::tick(bool manualStep)
