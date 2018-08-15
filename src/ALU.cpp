@@ -1,5 +1,4 @@
 #include "ALU.h"
-#include <iostream>
 
 ALU::ALU(Register* A_reg, byte* B_reg, byte* out_bus)
 {

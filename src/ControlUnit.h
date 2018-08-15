@@ -2,6 +2,7 @@
 #define CONTROLUNIT_H
 
 #include "Types.h"
+#include "Clock.h"
 #include "Counter.h"
 
 enum INSTRUCTION_SET {
@@ -28,12 +29,15 @@ enum MICROINSTRUCTIONS {
     PC_ENABLE = 0x2000,         //100000000000000
 };
 
+const bool MANUAL_STEP = true;
+
 class ControlUnit {
 public:
     ControlUnit(byte* instruction_register);
 
     control_word decode_micro_instruct(const byte instruction);
 
+    Clock clock;
     Counter microcounter;
 };
 

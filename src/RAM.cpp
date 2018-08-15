@@ -1,6 +1,6 @@
 #include "RAM.h"
 
-RAM::RAM(byte *bus)
+RAM::RAM(byte* bus)
 {
     data_bus = bus;
     for(int i = 0; i < 256; i++)
