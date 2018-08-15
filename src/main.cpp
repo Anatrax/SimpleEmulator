@@ -14,8 +14,8 @@ int main()
     //setupInput();
 
     // Initialize the CPU system and load the game/OS into memory
-    computer.cpu.init();
-    computer.cpu.load();
+    //computer.init();
+    //computer.load();
 
     // Emulation loop
     for(;;)

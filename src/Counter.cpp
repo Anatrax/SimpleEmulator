@@ -1,6 +1,6 @@
 #include "Counter.h"
 
-Counter::ProgramCounter(byte* addrs_bus)
+Counter::Counter(byte* addrs_bus)
 {
     address_bus = addrs_bus;
     instruction_address = 0x0;

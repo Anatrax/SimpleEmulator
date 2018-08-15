@@ -12,24 +12,6 @@
 #include "ALU.h"
 #include "ControlUnit.h"
 
-enum MICROINSTRUCTIONS {
-    HALT = 0x0000,
-    MEM_REG_SET = 0x0001,
-    RAM_SET = 0x0002,
-    RAM_ENABLE = 0x0004,
-    INSTRUCT_SET = 0x0008,
-    INSTRUCT_ENABLE = 0x0010,
-    A_SET = 0x0020,
-    A_ENABLE = 0x0040,
-    ALU_SET = 0x0080,
-    ALU_ENABLE = 0x0100,
-    IO_SET = 0x0200,
-    IO_ENABLE = 0x0400,
-    PC_INC = 0x0800,
-    PC_SET = 0x1000,
-    PC_ENABLE = 0x2000,
-};
-
 const bool SUBTRACT = true;
 const bool MANUAL_STEP = false;
 
@@ -40,11 +22,7 @@ class CPU {
 public:
     CPU(control_word* control_bus, byte* address_bus, byte* data_bus);
 
-    int init();
-
-    int load();
-
-    int emulateCycle();
+    control_word emulateCycle();
 
     control_word* ctrl_bus;
     byte cpu_bus;

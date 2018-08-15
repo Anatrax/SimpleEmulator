@@ -1,6 +1,8 @@
 #ifndef IO_H
 #define IO_H
 
+#include "Types.h"
+
 class IO {
 public:
     IO(byte* bus);
