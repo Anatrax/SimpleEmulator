@@ -5,16 +5,19 @@ typedef unsigned char byte;
 
 class Register {
 public:
-    Register(byte* bus);
-
-    void set();
+    Register(byte* bus1, byte* bus2 = nullptr);
 
     void clear();
 
-    byte enable();
+    void set();
+
+    byte get();
+
+    void enable();
 
 private:
-    byte* data_bus;
+    byte* input_bus;
+    byte* output_bus;
     byte data;
 };
 

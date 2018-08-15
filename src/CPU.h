@@ -5,33 +5,56 @@
 #ifndef CPU_H
 #define CPU_H
 
+#include "Types.h"
 #include "Clock.h"
-#include "ProgramCounter.h"
+#include "Counter.h"
 #include "Register.h"
 #include "ALU.h"
-#include "RAM.h"    // temporary until externalized
+#include "ControlUnit.h"
 
-typedef unsigned char byte;
-typedef int control_word;
+enum MICROINSTRUCTIONS {
+    HALT = 0x0000,
+    MEM_REG_SET = 0x0001,
+    RAM_SET = 0x0002,
+    RAM_ENABLE = 0x0004,
+    INSTRUCT_SET = 0x0008,
+    INSTRUCT_ENABLE = 0x0010,
+    A_SET = 0x0020,
+    A_ENABLE = 0x0040,
+    ALU_SET = 0x0080,
+    ALU_ENABLE = 0x0100,
+    IO_SET = 0x0200,
+    IO_ENABLE = 0x0400,
+    PC_INC = 0x0800,
+    PC_SET = 0x1000,
+    PC_ENABLE = 0x2000,
+};
+
+const bool SUBTRACT = true;
+const bool MANUAL_STEP = false;
 
 /**
  * @brief The CPU class represents the emulated CPU
  */
 class CPU {
 public:
-    CPU();
+    CPU(control_word* control_bus, byte* address_bus, byte* data_bus);
 
     int init();
 
+    int load();
+
     int emulateCycle();
 
-private:
+    control_word* ctrl_bus;
+    byte cpu_bus;
     Clock clock;
-    //byte address_bus;
-    byte data_bus;
+    Counter pc;
+    Register instr_reg;   // Instruction register
     Register A; // A register
-    Register B; // B register
-    control_word ctrl_signal;
+    ALU acc;    // Arithmetic Logic Unit (accumulator)
+    ControlUnit control_unit;
+
 //    unsigned short opcode;
 //    byte memory[4096]; // 4k memory = 4096
 //    byte V[16];    // general purpose registers

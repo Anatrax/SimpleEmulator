@@ -3,8 +3,6 @@
 
 #include "Register.h"
 
-typedef unsigned char byte;
-
 class RAM {
 public:
     RAM(byte* bus);

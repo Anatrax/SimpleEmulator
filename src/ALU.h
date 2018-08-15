@@ -5,7 +5,7 @@
 
 class ALU {
 public:
-    ALU(Register* A_reg, Register* B_reg, byte* data);
+    ALU(Register* A_reg, byte* B_reg, byte* out_bus);
 
     /**
      * @brief out outputs the result of A + B
@@ -15,8 +15,8 @@ public:
 
 private:
     Register* A;
-    Register* B;
-    //char flags;   // overflow, <, >, ==, !==
+    byte* B;
+    //char flags;   // overflow, <, >, ==
     byte* data_bus;
 };
 

@@ -15,12 +15,17 @@ int Clock::tick(bool manualStep)
 		{
 			char blank;
             std::cin.get(blank);
-		}
+        }
 		tick_tock = !tick_tock;
-		return tick_tock;
+        return tick_tock;
 	}
 	else
-		return tick_tock;
+        return tick_tock;
+}
+
+void Clock::tock()
+{
+    tick(false);
 }
 
 void Clock::start()

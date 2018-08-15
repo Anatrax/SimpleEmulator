@@ -3,9 +3,9 @@
 using namespace std;
 
 //#include //graphics_Library
-#include "CPU.h"
+#include "SimpleComputer.h"
 
-CPU cpu;
+struct SimpleComputer computer;
 
 int main()
 {
@@ -14,14 +14,14 @@ int main()
     //setupInput();
 
     // Initialize the CPU system and load the game/OS into memory
-    cpu.init();
-    //cpu.load();
+    computer.cpu.init();
+    computer.cpu.load();
 
     // Emulation loop
     for(;;)
     {
         // Emulate one cycle
-        cpu.emulateCycle();
+        computer.emulateCycle();
 
         // If the draw flag is set, update the screen
         //if()
